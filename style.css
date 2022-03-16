@@ -32,6 +32,10 @@ body{
 }
 
 .bg-red {
+    background-color: green;
+}
+
+.bg-green{
     background-color: red;
 }
 
@@ -48,4 +52,8 @@ body{
 .cell.easy {
     width: calc(100% / 10);
     height: calc(100% / 10);
+}
+
+.noClick {
+   pointer-events: none;
 }
