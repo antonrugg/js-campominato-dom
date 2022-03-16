@@ -27,20 +27,35 @@ const buttonHard = document.getElementById('hard');
 buttonEasy.addEventListener('click', () => {
     startGame(100, 'easy');
     generateBombs(100)
+    grid.classList.remove('noClick');
 })
     
 buttonMedium.addEventListener('click', () => {
     startGame(81, 'medium');
     generateBombs(81)
+    grid.classList.remove('noClick');
 })
 
 buttonHard.addEventListener('click', () => {
     startGame(49, 'hard');
     generateBombs(49)
+    grid.classList.remove('noClick');
 })
 
 
+function showAlert(message) {
+    const grid = document.getElementById('grid');
 
+    const alertMessage = `
+    <div class="game-alert">
+    <duv class="game-alert-message">
+    ${message}
+    </div>
+    </div>
+    `;
+
+    grid.innerHTML = grid.innerHTML + alertMessage;
+}
 
 
 function startGame(totCells, level) {
@@ -49,6 +64,8 @@ function startGame(totCells, level) {
 
     createElementsInGrid(totCells, level);
 };
+
+
 
 
 //generare 16 numeri casuali nello stesso range
@@ -98,6 +115,7 @@ function createElementsInGrid(totalCells, level) {
                 if (cell.innerText == positions[i]) {
                     cell.classList.add('bg-green');
                     grid.classList.add('noClick');
+                    showAlert('YOU LOST!')
                     
                 } else {
                     cell.classList.add('bg-red');
@@ -108,7 +126,4 @@ function createElementsInGrid(totalCells, level) {
     }
 }
 
-
-//se l'utente clicca sulla cella e questa contiene un id uguale ad uno dei numeri generati automaticamente nell'array delle bombe: 
-//aggiungere background red e fermare il gioco
 
