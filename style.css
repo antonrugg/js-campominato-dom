@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: blue;
+}
+
+#grid {
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid white;
+}
+
+.game-menu{
+    text-align: center;
+}
+
+.cell {
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    color: white;
+}
+
+.bg-red {
+    background-color: red;
+}
+
+.cell.hard {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+}
+
+.cell.medium {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+.cell.easy {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
